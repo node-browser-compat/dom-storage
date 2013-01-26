@@ -9,6 +9,9 @@
     ;
 
   function runTest(storage) {
+    // should not return prototype properties
+    assert.strictEqual(null, Object.getItem('key'));
+    
     assert.strictEqual(0, Object.keys(storage).length);
     assert.strictEqual(0, storage.length);
 
