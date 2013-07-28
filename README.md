@@ -1,4 +1,4 @@
-DOMStorage - sessionStorage & localStorage for NodeJS
+sessionStorage & localStorage for NodeJS
 ===
 
 An inefficient, but as W3C-compliant as possible using only pure JavaScript, `DOMStorage` implementation.
