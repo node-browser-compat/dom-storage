@@ -12,13 +12,22 @@ Usage
 ----
 
     var Storage = require('dom-storage')
-      , localStorage = new Storage('./db.json') // in-file
-      , sessionStorage = new Storage()                // in-memory
+
+        // in-file, doesn't call `String(val)` on values (default)
+      , localStorage = new Storage('./db.json', { strict: false })
+
+        // in-memory, does call `String(val)` on values (i.e. `{}` becomes `'[object Object]'`
+      , sessionStorage = new Storage(null, { strict: true })
+
       , myValue = { foo: 'bar', baz: 'quux' }
       ;
 
-    localStorage.setItem('myKey', JSON.stringify(myValue));
+    localStorage.setItem('myKey', myValue);
     myValue = localStorage.getItem('myKey');
+
+    // use JSON to stringify / parse when using strict w3c compliance
+    sessionStorage.setItem('myKey', JSON.stringify(myValue));
+    myValue = JSON.parse(localStorage.getItem('myKey'));
 
 API
 ---
