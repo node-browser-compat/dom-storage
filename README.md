@@ -15,7 +15,7 @@ Usage
 var Storage = require('dom-storage')
 
     // in-file, doesn't call `String(val)` on values (default)
-  , localStorage = new Storage('./db.json', { strict: false })
+  , localStorage = new Storage('./db.json', { strict: false, ws: '  ' })
 
     // in-memory, does call `String(val)` on values (i.e. `{}` becomes `'[object Object]'`
   , sessionStorage = new Storage(null, { strict: true })
@@ -40,6 +40,11 @@ API
   * clear()
   * key(n)
   * length
+
+### Options
+
+  * strict - whether to stringify strictly as text `[Object object]` or as json `{ foo: bar }`.
+  * ws - the whitespace to use saving json to disk. Defaults to `'  '`.
 
 Tests
 ---
