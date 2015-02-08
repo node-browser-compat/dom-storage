@@ -74,3 +74,8 @@ Notes
   * db is read in synchronously
   * No callback when db is saved
   * Doesn't not emit `Storage` events (not sure how to do)
+
+License
+-------
+
+* [Apache2](http://www.apache.org/licenses/LICENSE-2.0)
