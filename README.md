@@ -51,15 +51,15 @@ Tests
 
 ```javascript
 0 === localStorage.length;
-null === localStorage.getItem('doesn't exist');
-undefined === localStorage['doesn't exist'];
+null === localStorage.getItem('doesn\'t exist');
+undefined === localStorage['doesn\'t exist'];
 
 localStorage.setItem('myItem');
-"undefined" === localStorage.getItem('myItem');
+'undefined' === localStorage.getItem('myItem');
 1 === localStorage.length;
 
 localStorage.setItem('myItem', 0);
-"0" === localStorage.getItem('myItem');
+'0' === localStorage.getItem('myItem');
 
 localStorage.removeItem('myItem', 0);
 0 === localStorage.length;
